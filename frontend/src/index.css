@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  body {
+    @apply bg-surface text-text-main font-sans antialiased;
+    min-height: 100vh;
+  }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { @apply bg-surface-2; }
+  ::-webkit-scrollbar-thumb { @apply bg-surface-3 rounded-full; }
+}
+
+@layer components {
+  .card {
+    @apply bg-surface-2 rounded-2xl p-6 border border-surface-3;
+  }
+  .btn-primary {
+    @apply bg-primary-500 hover:bg-primary-600 text-white font-semibold px-4 py-2 rounded-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply bg-surface-3 hover:bg-zinc-600 text-text-main font-medium px-4 py-2 rounded-xl transition-all duration-200;
+  }
+  .btn-danger {
+    @apply bg-red-600 hover:bg-red-700 text-white font-medium px-4 py-2 rounded-xl transition-all duration-200;
+  }
+  .input {
+    @apply bg-surface border border-surface-3 text-text-main rounded-xl px-4 py-2.5 w-full focus:outline-none focus:ring-2 focus:ring-primary-500 placeholder-text-muted transition-all duration-200;
+  }
+  .badge-income {
+    @apply bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded-full text-xs font-semibold;
+  }
+  .badge-expense {
+    @apply bg-red-500/10 text-red-400 px-2 py-0.5 rounded-full text-xs font-semibold;
+  }
+  .sidebar-link {
+    @apply flex items-center gap-3 px-4 py-3 rounded-xl text-text-muted hover:bg-surface-3 hover:text-text-main transition-all duration-200 font-medium;
+  }
+  .sidebar-link.active {
+    @apply bg-primary-500/20 text-primary-400;
+  }
+}
